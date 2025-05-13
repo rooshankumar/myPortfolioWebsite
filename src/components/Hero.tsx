@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
               Hi, I'm <span className="text-portfolio-yellow">Roshan Kumar</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-portfolio-gray mb-6">
-              Developer & Computer Science Student
+              BCA Student
             </h2>
             <p className="text-lg mb-8 text-portfolio-gray max-w-lg">
               Passionate about creating innovative solutions through code, 
