@@ -1,5 +1,5 @@
 
-import { Book } from 'lucide-react';
+import { Book, Award, FileCheck } from 'lucide-react';
 
 const Education = () => {
   const education = [
@@ -32,34 +32,91 @@ const Education = () => {
   
   const certifications = [
     {
-      title: "Artificial Intelligence & Machine Learning",
-      provider: "iMooX",
+      title: "Goethe-Zertifikat A2",
+      provider: "Goethe-Institut e.V.",
+      date: "September 2024",
+      skills: "German",
+      description: "German language proficiency certification at A2 level.",
+      credential: ""
+    },
+    {
+      title: "International English Language Testing System",
+      provider: "IDP Education Ltd",
+      date: "September 2024",
+      skills: "English as a Second Language (ESL)",
+      description: "Internationally recognized English language proficiency test.",
+      credential: "Credential ID 128295"
+    },
+    {
+      title: "Master in Business Ethics",
+      provider: "Udemy",
+      date: "May 2024",
+      skills: "Communication",
+      description: "Comprehensive understanding of ethical principles and practices in business environments.",
+      credential: ""
+    },
+    {
+      title: "TestAs",
+      provider: "TestDaF-Institut",
+      date: "April 2024",
+      skills: "Analytical Reasoning, Problem Solving",
+      description: "Aptitude test for foreign students applying to German universities.",
+      credential: ""
+    },
+    {
+      title: "Artificial Intelligence and Machine Learning",
+      provider: "iMooX.at",
       date: "January 2024",
-      description: "Covered core ML concepts, rule-based classification, clustering, dimensionality reduction, and ethical considerations in AI."
+      skills: "AI, Machine Learning",
+      description: "Covered core ML concepts, rule-based classification, clustering, dimensionality reduction, and ethical considerations in AI.",
+      credential: ""
+    },
+    {
+      title: "Foundations of User Experience (UX) Design",
+      provider: "Coursera",
+      date: "November 2023",
+      skills: "UX Design",
+      description: "Introduction to UX design principles, methodologies, and best practices.",
+      credential: ""
+    },
+    {
+      title: "Plan a Successful Freelancing Business",
+      provider: "Coursera",
+      date: "November 2023",
+      skills: "Freelancing, Business Management",
+      description: "Strategic planning and management of independent freelance business operations.",
+      credential: ""
     },
     {
       title: "Introduction to Software Engineering",
       provider: "Coursera",
       date: "October 2023",
-      description: "Learned SDLC, software development methodologies, project management, and quality assurance."
+      description: "Learned SDLC, software development methodologies, project management, and quality assurance.",
+      credential: ""
     },
     {
-      title: "Object-Oriented Programming in Java",
+      title: "Object Oriented Programming in Java",
       provider: "Coursera",
       date: "October 2023",
-      description: "Gained hands-on experience with Java OOP principles, including inheritance, polymorphism, and interfaces."
+      skills: "Java",
+      description: "Gained hands-on experience with Java OOP principles, including inheritance, polymorphism, and interfaces.",
+      credential: ""
     },
     {
       title: "Python Essentials I",
       provider: "Cisco",
       date: "October 2023",
-      description: "Covered Python fundamentals, control structures, functions, and debugging techniques."
+      skills: "Python (Programming Language)",
+      description: "Covered Python fundamentals, control structures, functions, and debugging techniques.",
+      credential: ""
     },
     {
-      title: "The Fundamentals of Digital Marketing",
+      title: "Google Certifications",
       provider: "Google Digital Garage",
       date: "November 2022",
-      description: "Explored SEO, social media marketing, data analytics, and online campaign strategies."
+      skills: "Digital Marketing",
+      description: "Explored SEO, social media marketing, data analytics, and online campaign strategies.",
+      credential: "Credential ID FXN 4TK N3N"
     }
   ];
   
@@ -104,18 +161,26 @@ const Education = () => {
           
           <div>
             <h3 className="text-2xl font-semibold mb-8 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-portfolio-yellow">
-                <path d="M12 9v6"></path><path d="M8 9h8.2a2 2 0 0 1 1.8 2.8L13.8 18H12"></path><circle cx="12" cy="5" r="1"></circle>
-              </svg>
-              Certifications
+              <Award className="mr-2 text-portfolio-yellow" />
+              Certifications & Licenses
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="card animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div key={index} className="card animate-fade-in shadow-md hover:shadow-lg transition-all" style={{ animationDelay: `${index * 0.1}s` }}>
                   <h4 className="text-lg font-semibold">{cert.title}</h4>
-                  <p className="text-sm text-portfolio-yellow">{cert.provider} | {cert.date}</p>
-                  <p className="mt-3 text-portfolio-gray">{cert.description}</p>
+                  <p className="text-sm text-portfolio-yellow font-medium">{cert.provider} | {cert.date}</p>
+                  {cert.skills && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {cert.skills.split(', ').map((skill, idx) => (
+                        <span key={idx} className="inline-block bg-gray-100 rounded-full px-2 py-1 text-xs font-medium text-gray-700">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="mt-3 text-portfolio-gray text-sm">{cert.description}</p>
+                  {cert.credential && <p className="mt-2 text-xs text-gray-500">{cert.credential}</p>}
                 </div>
               ))}
             </div>
@@ -123,9 +188,7 @@ const Education = () => {
           
           <div>
             <h3 className="text-2xl font-semibold mb-8 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-portfolio-yellow">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3.5 3 8.5 3 12 0v-5"></path>
-              </svg>
+              <FileCheck className="mr-2 text-portfolio-yellow" />
               Additional Training
             </h3>
             
