@@ -1,5 +1,4 @@
-
-import { GitHub, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -45,7 +44,7 @@ const Hero = () => {
                 className="text-portfolio-gray hover:text-portfolio-dark transition-colors"
                 aria-label="GitHub Profile"
               >
-                <GitHub size={24} />
+                <Github size={24} />
               </a>
               <a 
                 href="https://www.linkedin.com/in/roshaankumar" 
