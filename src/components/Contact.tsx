@@ -1,7 +1,86 @@
 
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    error: false,
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Form validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message: 'Please fill out all fields'
+      });
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message: 'Please enter a valid email address'
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // In a real application, you would send this data to a server
+      // This is a simulation of an API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Clear form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      setFormStatus({
+        submitted: true,
+        error: false,
+        message: 'Thank you for your message! I will get back to you soon.'
+      });
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message: 'There was an error sending your message. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto">
@@ -81,7 +160,13 @@ const Contact = () => {
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <form className="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <form className="bg-gray-50 p-8 rounded-lg shadow-sm" onSubmit={handleSubmit}>
+              {formStatus.submitted && (
+                <div className={`mb-6 p-3 rounded-md ${formStatus.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                  {formStatus.message}
+                </div>
+              )}
+              
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
@@ -89,6 +174,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your name"
                 />
@@ -101,6 +188,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your email"
                 />
@@ -113,6 +202,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter subject"
                 />
@@ -125,6 +216,8 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your message"
                 ></textarea>
@@ -132,9 +225,10 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full btn-primary py-3"
+                disabled={isSubmitting}
+                className={`w-full btn-primary py-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
