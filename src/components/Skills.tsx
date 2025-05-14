@@ -128,26 +128,6 @@ const Skills = () => {
             </div>
           </div>
         </div>
-        
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold mb-6">Test Scores</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="card animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <h4 className="text-lg font-semibold">TestAS (04/2024)</h4>
-              <div className="mt-2">
-                <p><span className="font-medium">Core Test:</span> 94</p>
-                <p><span className="font-medium">Subject Module (MCN):</span> 85</p>
-              </div>
-            </div>
-            
-            <div className="card animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h4 className="text-lg font-semibold">CUET UG (07/2023)</h4>
-              <div className="mt-2">
-                <p><span className="font-medium">Total Score:</span> 442</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
