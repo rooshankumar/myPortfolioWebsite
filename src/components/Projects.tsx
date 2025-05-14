@@ -4,16 +4,16 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "myPortfolioWebsite – The Interactive Language Learning Platform",
-      image: "https://placehold.co/600x400/f5f5f5/666666?text=myPortfolioWebsite",
+      title: "roshLingua – Language Learning Platform",
+      image: "https://placehold.co/600x400/f5f5f5/666666?text=roshLingua",
       description: "A full-stack language exchange web app using React, TypeScript, and Supabase with real-time chat, translation assistance, and matching system for language partners.",
       technologies: ["React", "TypeScript", "Supabase", "Vercel"],
       link: "https://roshlingua.vercel.app",
       features: [
-        "Real-time chat with translation assistance",
-        "Matching system for language partners",
-        "User progress tracking and gamified learning",
-        "SEO strategies and Google AdSense monetization"
+        "Global community of language learners",
+        "Real conversations with native speakers",
+        "Language partner matching system",
+        "Progress tracking with streaks"
       ]
     },
     {
