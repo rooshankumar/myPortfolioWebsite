@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: "roshLingua – Language Learning Platform",
-      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
+      image: "https://i.imgur.com/XYZ1234.png",
       description: "A full-stack language exchange web app using React, TypeScript, and Supabase with real-time chat, translation assistance, and matching system for language partners.",
       technologies: ["React", "TypeScript", "Supabase", "Vercel"],
       link: "https://roshlingua.vercel.app",
@@ -18,7 +18,7 @@ const Projects = () => {
     },
     {
       title: "My PDF Kit – AI-Assisted Web-Based PDF Toolkit",
-      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
+      image: "https://i.imgur.com/ABC5678.png",
       description: "A production-level PDF manipulation web app for merging, splitting, and compressing PDFs using Next.js, TypeScript, JavaScript, and CSS.",
       technologies: ["Next.js", "TypeScript", "JavaScript", "CSS", "Netlify"],
       link: "https://mypdfkit.netlify.app",
@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       title: "Netflix UI Clone",
-      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
+      image: "https://i.imgur.com/DEF9012.png",
       description: "A responsive Netflix-inspired interface using HTML, CSS, and JavaScript with a focus on replicating layout and functionality.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://netflliiix.netlify.app",
@@ -44,7 +44,7 @@ const Projects = () => {
     },
     {
       title: "Personal Portfolio",
-      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
+      image: "https://i.imgur.com/GHI3456.png",
       description: "A clean, single-page portfolio showcasing skills, projects, and background using HTML, CSS, and JavaScript.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://rooshankumar.netlify.app",
