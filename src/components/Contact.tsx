@@ -1,8 +1,10 @@
 
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +19,11 @@ const Contact = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Replace these with your actual EmailJS credentials
+  const EMAIL_SERVICE_ID = "YOUR_SERVICE_ID"; 
+  const EMAIL_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  const EMAIL_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -53,24 +60,33 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real application, you would send this data to a server
-      // This is a simulation of an API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Clear form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      setFormStatus({
-        submitted: true,
-        error: false,
-        message: 'Thank you for your message! I will get back to you soon.'
-      });
+      if (formRef.current) {
+        // Send email using EmailJS
+        const result = await emailjs.sendForm(
+          EMAIL_SERVICE_ID,
+          EMAIL_TEMPLATE_ID,
+          formRef.current,
+          EMAIL_PUBLIC_KEY
+        );
+        
+        console.log('Email sent successfully:', result.text);
+        
+        // Clear form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: 'Thank you for your message! I will get back to you soon.'
+        });
+      }
     } catch (error) {
+      console.error('Email send error:', error);
       setFormStatus({
         submitted: true,
         error: true,
@@ -160,7 +176,7 @@ const Contact = () => {
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <form className="bg-gray-50 p-8 rounded-lg shadow-sm" onSubmit={handleSubmit}>
+            <form ref={formRef} className="bg-gray-50 p-8 rounded-lg shadow-sm" onSubmit={handleSubmit}>
               {formStatus.submitted && (
                 <div className={`mb-6 p-3 rounded-md ${formStatus.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
                   {formStatus.message}
@@ -174,6 +190,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
@@ -188,6 +205,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
@@ -202,6 +220,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
@@ -215,6 +234,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
