@@ -73,7 +73,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-portfolio-gray hover:text-portfolio-yellow transition-colors"
                   >
-                    github.com/roshan-kumar
+                    github.com/rooshankumar
                   </a>
                 </div>
               </div>
