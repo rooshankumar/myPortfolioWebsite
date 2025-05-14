@@ -78,8 +78,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md animate-fade-in">
-          <div className="container mx-auto py-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-white shadow-md animate-fade-in fixed w-full left-0 top-16 z-40">
+          <div className="container mx-auto py-4 flex flex-col space-y-4 px-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -88,7 +88,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="nav-link block py-2"
+                className="nav-link block py-3 text-lg border-b border-gray-100"
               >
                 {link.name}
               </a>

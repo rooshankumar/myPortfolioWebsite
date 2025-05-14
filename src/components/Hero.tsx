@@ -3,22 +3,22 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-50 pt-16">
+    <section id="home" className="min-h-screen flex items-center bg-gray-50 pt-16 px-4 md:px-0">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-portfolio-dark">
+          <div className="w-full md:w-1/2 animate-fade-in">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-portfolio-dark">
               Hi, I'm <span className="text-portfolio-yellow">Roshan Kumar</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-portfolio-gray mb-6">
+            <h2 className="text-lg md:text-2xl text-portfolio-gray mb-6">
               BCA Student
             </h2>
-            <p className="text-lg mb-8 text-portfolio-gray max-w-lg">
+            <p className="text-base md:text-lg mb-8 text-portfolio-gray max-w-lg">
               Passionate about creating innovative solutions through code, 
               with a focus on full-stack development and user experience.
             </p>
 
-            <div className="flex space-x-4 mb-8">
+            <div className="flex flex-wrap gap-4 mb-8">
               <a 
                 href="https://www.linkedin.com/in/roshaankumar" 
                 target="_blank" 
