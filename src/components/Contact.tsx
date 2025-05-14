@@ -60,7 +60,7 @@ const Contact = () => {
           'service_iypl1fp', 
           'template_el0f05c', 
           form.current,
-          'dunnAqPwnU3cLGMS3'
+          'XCVL8ylKqlXhZkoE3'
         );
 
         console.log('Email sent successfully:', result.text);
