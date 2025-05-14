@@ -77,8 +77,7 @@ const Hero = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 bg-portfolio-yellow w-24 h-24 rounded-full flex items-center justify-center text-portfolio-dark font-bold">
                 <div className="text-center">
-                  <div className="text-sm">BCA</div>
-                  <div className="text-xs">Student</div>
+                  <div className="text-sm">Student</div>
                 </div>
               </div>
             </div>
