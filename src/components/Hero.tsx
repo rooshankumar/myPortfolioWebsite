@@ -11,7 +11,7 @@ const Hero = () => {
               Hi, I'm <span className="text-portfolio-yellow">Roshan Kumar</span>
             </h1>
             <h2 className="text-lg md:text-2xl text-portfolio-gray mb-6">
-              BCA Student
+              Student
             </h2>
             <p className="text-base md:text-lg mb-8 text-portfolio-gray max-w-lg">
               Passionate about creating innovative solutions through code, 
@@ -29,7 +29,7 @@ const Hero = () => {
                 <span>LinkedIn</span>
               </a>
               <a 
-                href="mailto:isthisroshan@gmail.com" 
+                href="#contact" 
                 className="btn-primary flex items-center space-x-2"
               >
                 <Mail size={18} />
