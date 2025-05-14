@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: "roshLingua – Language Learning Platform",
-      image: "https://placehold.co/600x400/f5f5f5/666666?text=roshLingua",
+      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
       description: "A full-stack language exchange web app using React, TypeScript, and Supabase with real-time chat, translation assistance, and matching system for language partners.",
       technologies: ["React", "TypeScript", "Supabase", "Vercel"],
       link: "https://roshlingua.vercel.app",
@@ -69,11 +69,11 @@ const Projects = () => {
               className="card overflow-hidden flex flex-col h-full animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="relative h-48 overflow-hidden rounded-lg mb-4">
+              <div className="relative h-48 overflow-hidden rounded-lg mb-4 bg-gray-100">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition duration-500 hover:scale-110"
+                  className="w-full h-full object-contain md:object-cover transition duration-500 hover:scale-105"
                 />
               </div>
               
