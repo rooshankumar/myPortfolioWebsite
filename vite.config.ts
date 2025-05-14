@@ -8,10 +8,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
     port: 8080,
-    hmr: true,
-    fs: {
-      allow: ['..']
-    },
+    hmr: {
+      host: process.env.REPL_SLUG + '.' + process.env.REPL_OWNER + '.repl.co',
+      protocol: 'https',
+      clientPort: 443
+    }
   },
   plugins: [
     react(),
