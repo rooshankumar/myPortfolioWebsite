@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: "roshLingua – Language Learning Platform",
-      image: "https://i.imgur.com/XYZ1234.png",
+      image: "https://api.apiflash.com/v1/urltoimage?access_key=d7e396f18be146d5ba91199e999e1d26&url=https://roshlingua.vercel.app&format=jpeg&quality=80&width=800&height=600",
       description: "A full-stack language exchange web app using React, TypeScript, and Supabase with real-time chat, translation assistance, and matching system for language partners.",
       technologies: ["React", "TypeScript", "Supabase", "Vercel"],
       link: "https://roshlingua.vercel.app",
@@ -18,7 +18,7 @@ const Projects = () => {
     },
     {
       title: "My PDF Kit – AI-Assisted Web-Based PDF Toolkit",
-      image: "https://i.imgur.com/ABC5678.png",
+      image: "https://api.apiflash.com/v1/urltoimage?access_key=d7e396f18be146d5ba91199e999e1d26&url=https://mypdfkit.netlify.app&format=jpeg&quality=80&width=800&height=600",
       description: "A production-level PDF manipulation web app for merging, splitting, and compressing PDFs using Next.js, TypeScript, JavaScript, and CSS.",
       technologies: ["Next.js", "TypeScript", "JavaScript", "CSS", "Netlify"],
       link: "https://mypdfkit.netlify.app",
@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       title: "Netflix UI Clone",
-      image: "https://i.imgur.com/DEF9012.png",
+      image: "https://api.apiflash.com/v1/urltoimage?access_key=d7e396f18be146d5ba91199e999e1d26&url=https://netflliiix.netlify.app&format=jpeg&quality=80&width=800&height=600",
       description: "A responsive Netflix-inspired interface using HTML, CSS, and JavaScript with a focus on replicating layout and functionality.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://netflliiix.netlify.app",
@@ -44,7 +44,7 @@ const Projects = () => {
     },
     {
       title: "Personal Portfolio",
-      image: "https://i.imgur.com/GHI3456.png",
+      image: "https://api.apiflash.com/v1/urltoimage?access_key=d7e396f18be146d5ba91199e999e1d26&url=https://rooshankumar.netlify.app&format=jpeg&quality=80&width=800&height=600",
       description: "A clean, single-page portfolio showcasing skills, projects, and background using HTML, CSS, and JavaScript.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://rooshankumar.netlify.app",
