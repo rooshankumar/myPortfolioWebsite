@@ -1,30 +1,24 @@
-
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  
+
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     error: false,
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // Replace these with your actual EmailJS credentials
-  const EMAIL_SERVICE_ID = "YOUR_SERVICE_ID"; 
-  const EMAIL_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-  const EMAIL_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({
@@ -32,10 +26,10 @@ const Contact = () => {
       [id]: value
     }));
   };
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Form validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       setFormStatus({
@@ -45,7 +39,7 @@ const Contact = () => {
       });
       return;
     }
-    
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
@@ -56,21 +50,21 @@ const Contact = () => {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
-      if (formRef.current) {
-        // Send email using EmailJS
+      // Send email using EmailJS
+      if (form.current) {
         const result = await emailjs.sendForm(
-          EMAIL_SERVICE_ID,
-          EMAIL_TEMPLATE_ID,
-          formRef.current,
-          EMAIL_PUBLIC_KEY
+          'service_iypl1fp', 
+          'template_el0f05c', 
+          form.current,
+          'dunnAqPwnU3cLGMS3'
         );
-        
+
         console.log('Email sent successfully:', result.text);
-        
+
         // Clear form after successful submission
         setFormData({
           name: '',
@@ -78,7 +72,7 @@ const Contact = () => {
           subject: '',
           message: ''
         });
-        
+
         setFormStatus({
           submitted: true,
           error: false,
@@ -86,7 +80,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
-      console.error('Email send error:', error);
+      console.error('Email send failed:', error);
       setFormStatus({
         submitted: true,
         error: true,
@@ -96,12 +90,12 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-  
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto">
         <h2 className="section-title">Contact Me</h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-8 animate-fade-in">
             <div>
@@ -111,7 +105,7 @@ const Contact = () => {
                 Feel free to reach out through any of the channels below.
               </p>
             </div>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <Mail className="text-portfolio-yellow mr-4 mt-1" size={24} />
@@ -122,7 +116,7 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <Phone className="text-portfolio-yellow mr-4 mt-1" size={24} />
                 <div>
@@ -132,7 +126,7 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <MapPin className="text-portfolio-yellow mr-4 mt-1" size={24} />
                 <div>
@@ -142,7 +136,7 @@ const Contact = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <Linkedin className="text-portfolio-yellow mr-4 mt-1" size={24} />
                 <div>
@@ -157,7 +151,7 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <Github className="text-portfolio-yellow mr-4 mt-1" size={24} />
                 <div>
@@ -174,45 +168,45 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <form ref={formRef} className="bg-gray-50 p-8 rounded-lg shadow-sm" onSubmit={handleSubmit}>
+            <form ref={form} className="bg-gray-50 p-8 rounded-lg shadow-sm" onSubmit={handleSubmit}>
               {formStatus.submitted && (
                 <div className={`mb-6 p-3 rounded-md ${formStatus.error ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
                   {formStatus.message}
                 </div>
               )}
-              
+
               <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="from_name" className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="from_name"
+                  name="from_name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your name"
                 />
               </div>
-              
+
               <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="from_email" className="block text-sm font-medium mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  id="from_email"
+                  name="from_email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your email"
                 />
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">
                   Subject
@@ -222,12 +216,12 @@ const Contact = () => {
                   id="subject"
                   name="subject"
                   value={formData.subject}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter subject"
                 />
               </div>
-              
+
               <div className="mb-8">
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message
@@ -237,12 +231,12 @@ const Contact = () => {
                   name="message"
                   rows={5}
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent"
                   placeholder="Enter your message"
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting}
