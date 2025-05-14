@@ -58,7 +58,7 @@ const Contact = () => {
       if (form.current) {
         const result = await emailjs.sendForm(
           'service_iypl1fp', 
-          'template_ty78f3o', 
+          'template_el0f05c', 
           form.current,
           'XCVL8ylKqlXhZkoE3'
         );
