@@ -132,7 +132,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">Location</h4>
                   <p className="text-portfolio-gray">
-                    Salimpur Ahra, Gali no 3, Gandhi Maidan, Patna, Bihar, India - 800003
+                    India
                   </p>
                 </div>
               </div>
