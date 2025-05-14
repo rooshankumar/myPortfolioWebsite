@@ -39,7 +39,7 @@ const Hero = () => {
 
             <div className="flex items-center space-x-4">
               <a 
-                href="https://github.com/roshan-kumar" 
+                href="https://github.com/rooshankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-portfolio-gray hover:text-portfolio-dark transition-colors"

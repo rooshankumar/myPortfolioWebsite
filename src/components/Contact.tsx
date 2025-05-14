@@ -68,7 +68,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">GitHub</h4>
                   <a 
-                    href="https://github.com/roshan-kumar" 
+                    href="https://github.com/rooshankumar" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-portfolio-gray hover:text-portfolio-yellow transition-colors"
