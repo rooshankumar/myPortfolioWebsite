@@ -18,7 +18,7 @@ const Projects = () => {
     },
     {
       title: "My PDF Kit – AI-Assisted Web-Based PDF Toolkit",
-      image: "https://placehold.co/600x400/f5f5f5/666666?text=My+PDF+Kit",
+      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
       description: "A production-level PDF manipulation web app for merging, splitting, and compressing PDFs using Next.js, TypeScript, JavaScript, and CSS.",
       technologies: ["Next.js", "TypeScript", "JavaScript", "CSS", "Netlify"],
       link: "https://mypdfkit.netlify.app",
@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       title: "Netflix UI Clone",
-      image: "https://placehold.co/600x400/f5f5f5/666666?text=Netflix+Clone",
+      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
       description: "A responsive Netflix-inspired interface using HTML, CSS, and JavaScript with a focus on replicating layout and functionality.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://netflliiix.netlify.app",
@@ -44,7 +44,7 @@ const Projects = () => {
     },
     {
       title: "Personal Portfolio",
-      image: "https://placehold.co/600x400/f5f5f5/666666?text=Portfolio",
+      image: "/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png",
       description: "A clean, single-page portfolio showcasing skills, projects, and background using HTML, CSS, and JavaScript.",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       link: "https://rooshankumar.netlify.app",
