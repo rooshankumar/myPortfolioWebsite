@@ -43,7 +43,7 @@ const About = () => {
                   <Calendar className="text-portfolio-yellow mr-4 mt-1" size={20} />
                   <div>
                     <h4 className="font-medium">Date of Birth</h4>
-                    <p>January 4, 2007</p>
+                    <p>January 4 </p>
                   </div>
                 </div>
                 
