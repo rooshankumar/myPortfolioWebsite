@@ -13,11 +13,11 @@ const Hero = () => {
               Hi, I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Roshan Kumar</span>
             </h1>
             <h2 className="text-lg md:text-2xl text-muted-foreground mb-6 font-medium">
-              Software Engineering Student
+              Computer Science Student & Student Consultant
             </h2>
             <p className="text-base md:text-lg mb-8 text-muted-foreground max-w-lg leading-relaxed">
-              Passionate about creating innovative solutions through code, 
-              with a focus on full-stack development and user experience.
+              Computer Science student at Hochschule München passionate about making education more accessible. 
+              I help students navigate German university admissions and build solutions for better learning experiences.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -72,15 +72,15 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl relative">
                 <img 
-                  src={profileImage} 
-                  alt="Roshan Kumar - Software Engineering Student" 
+                  src="/lovable-uploads/1291fc2d-0fcb-4737-877c-ff2e123ecc45.png" 
+                  alt="Roshan Kumar - Computer Science Student & Student Consultant" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 rounded-full ring-4 ring-primary/10"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full flex items-center justify-center text-white font-bold" style={{background: 'var(--gradient-primary)'}}>
                 <div className="text-center">
-                  <div className="text-sm">Student</div>
+                  <div className="text-xs">CS Student</div>
                 </div>
               </div>
             </div>
