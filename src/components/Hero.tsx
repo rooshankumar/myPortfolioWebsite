@@ -1,19 +1,21 @@
 
 import { Github, Linkedin, Mail } from 'lucide-react';
+import profileImage from '../assets/profile-image.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-gray-50 pt-16 px-4 md:px-0">
-      <div className="container mx-auto">
+    <section id="home" className="min-h-screen flex items-center bg-background pt-16 px-4 md:px-0 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-1/2 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-portfolio-dark">
-              Hi, I'm <span className="text-portfolio-yellow">Roshan Kumar</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
+              Hi, I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Roshan Kumar</span>
             </h1>
-            <h2 className="text-lg md:text-2xl text-portfolio-gray mb-6">
-              Student
+            <h2 className="text-lg md:text-2xl text-muted-foreground mb-6 font-medium">
+              Software Engineering Student
             </h2>
-            <p className="text-base md:text-lg mb-8 text-portfolio-gray max-w-lg">
+            <p className="text-base md:text-lg mb-8 text-muted-foreground max-w-lg leading-relaxed">
               Passionate about creating innovative solutions through code, 
               with a focus on full-stack development and user experience.
             </p>
@@ -42,7 +44,7 @@ const Hero = () => {
                 href="https://github.com/rooshankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-portfolio-gray hover:text-portfolio-dark transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="GitHub Profile"
               >
                 <Github size={24} />
@@ -51,14 +53,14 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/roshaankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-portfolio-gray hover:text-portfolio-dark transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin size={24} />
               </a>
               <a 
                 href="mailto:isthisroshan@gmail.com" 
-                className="text-portfolio-gray hover:text-portfolio-dark transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail size={24} />
@@ -68,14 +70,15 @@ const Hero = () => {
 
           <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl relative">
                 <img 
-                  src="/lovable-uploads/f0816146-0344-4470-adee-e145e5652c56.png" 
-                  alt="Roshan Kumar" 
+                  src={profileImage} 
+                  alt="Roshan Kumar - Software Engineering Student" 
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 rounded-full ring-4 ring-primary/10"></div>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-portfolio-yellow w-24 h-24 rounded-full flex items-center justify-center text-portfolio-dark font-bold">
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full flex items-center justify-center text-white font-bold" style={{background: 'var(--gradient-primary)'}}>
                 <div className="text-center">
                   <div className="text-sm">Student</div>
                 </div>

@@ -63,13 +63,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for portfolio
-				portfolio: {
-					yellow: '#FFCC00',
-					dark: '#1A1A1A',
-					light: '#F5F5F5',
-					gray: '#666666'
-				}
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
