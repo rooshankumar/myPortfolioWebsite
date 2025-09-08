@@ -1,5 +1,5 @@
 
-import { Calendar, MapPin, User } from 'lucide-react';
+import { Calendar, MapPin, User, GraduationCap } from 'lucide-react';
 
 const About = () => {
   return (
@@ -27,43 +27,63 @@ const About = () => {
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="card">
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">Personal Information</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <User className="text-primary mr-4 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-medium text-foreground">Full Name</h4>
-                    <p className="text-muted-foreground">Roshan Kumar</p>
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 rounded-xl"></div>
+              <div className="card border-2 border-primary/20 relative z-10">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mr-4">
+                    <User className="text-white" size={24} />
                   </div>
+                  <h3 className="text-2xl font-semibold text-foreground">Personal Information</h3>
                 </div>
                 
-                <div className="flex items-start">
-                  <Calendar className="text-primary mr-4 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-medium text-foreground">Current Study</h4>
-                    <p className="text-muted-foreground">Engineering Physics & Data Science at Hochschule München</p>
+                <div className="grid gap-6">
+                  <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                        <User className="text-primary" size={18} />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-foreground">Full Name</h4>
+                        <p className="text-muted-foreground">Roshan Kumar</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <MapPin className="text-primary mr-4 mt-1" size={20} />
-                  <div>
-                    <h4 className="font-medium text-foreground">Location</h4>
-                    <p className="text-muted-foreground">München, Germany</p>
+                  
+                  <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mr-4 group-hover:bg-secondary/20 transition-colors">
+                        <Calendar className="text-secondary" size={18} />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-foreground">Current Study</h4>
+                        <p className="text-muted-foreground">Engineering Physics & Data Science at Hochschule München</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="text-primary mr-4 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="m7 7 10 10-5 5V2l5 5L7 17"></path>
-                    </svg>
+                  
+                  <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
+                        <MapPin className="text-accent" size={18} />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-foreground">Location</h4>
+                        <p className="text-muted-foreground">India</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-foreground">Specialty</h4>
-                    <p className="text-muted-foreground">Student Consultant - German University Admissions</p>
+                  
+                  <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
+                    <div className="flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                        <GraduationCap className="text-primary" size={18} />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-foreground">Specialty</h4>
+                        <p className="text-muted-foreground">Student Consultant - German University Admissions</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
