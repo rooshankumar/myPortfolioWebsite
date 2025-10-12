@@ -4,6 +4,20 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: "PublicGermany – Study in Germany Platform",
+      image: "https://placehold.co/800x600/3b5bdb/ffffff?text=PublicGermany",
+      description: "A comprehensive web platform helping students navigate the entire process of studying in Germany, from APS certification to university applications and visa processes.",
+      technologies: ["React", "TypeScript", "Next.js", "Vercel"],
+      link: "https://publicgermany.vercel.app/",
+      features: [
+        "Complete guide to studying in Germany",
+        "APS certification guidance",
+        "University application support",
+        "Visa process assistance",
+        "50+ students successfully guided"
+      ]
+    },
+    {
       title: "roshLingua – Language Learning Platform",
       image: "https://placehold.co/800x600/f5f5f5/666666?text=roshLingua",
       description: "A full-stack language exchange web app using React, TypeScript, and Supabase with real-time chat, translation assistance, and matching system for language partners.",
@@ -58,66 +72,73 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="container mx-auto">
-        <h2 className="section-title">My Projects</h2>
+    <section id="projects" className="py-24 bg-background">
+      <div className="container mx-auto max-w-6xl px-4 md:px-8">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold tracking-wider text-primary uppercase mb-2">Portfolio</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Projects</h2>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="card overflow-hidden flex flex-col h-full animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="bg-card border border-border rounded-xl overflow-hidden flex flex-col h-full animate-fade-in hover:shadow-md transition-all duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 overflow-hidden rounded-lg mb-4 bg-gray-100">
+              <div className="relative h-48 overflow-hidden bg-secondary">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-contain md:object-cover transition duration-500 hover:scale-105"
+                  className="w-full h-full object-contain md:object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
               
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              
-              <p className="text-portfolio-gray mb-4 flex-grow">{project.description}</p>
-              
-              <div className="mb-4">
-                <h4 className="font-medium mb-2">Key Features:</h4>
-                <ul className="list-disc pl-5 space-y-1">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="text-sm text-portfolio-gray">{feature}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="bg-gray-100 text-portfolio-gray text-xs px-3 py-1 rounded-full">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex space-x-4 mt-auto">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center space-x-2"
-                >
-                  <ExternalLink size={16} />
-                  <span>View Project</span>
-                </a>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold mb-3 text-foreground">{project.title}</h3>
                 
-                <a 
-                  href="https://github.com/rooshankumar" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-outline flex items-center space-x-2"
-                >
-                  <Github size={16} />
-                  <span>Source Code</span>
-                </a>
+                <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">{project.description}</p>
+              
+                <div className="mb-4">
+                  <h4 className="font-semibold text-sm mb-3 text-foreground">Key Features:</h4>
+                  <ul className="space-y-2">
+                    {project.features.map((feature, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex items-start">
+                        <span className="text-primary mr-2">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="bg-secondary text-secondary-foreground text-xs px-3 py-1.5 rounded-md font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              
+                <div className="flex gap-3 mt-auto">
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors text-sm"
+                  >
+                    <ExternalLink size={16} />
+                    <span>View Live</span>
+                  </a>
+                  
+                  <a 
+                    href="https://github.com/rooshankumar" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border-2 border-border text-foreground rounded-lg font-medium hover:border-primary hover:text-primary transition-colors text-sm"
+                  >
+                    <Github size={16} />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
