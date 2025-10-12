@@ -4,83 +4,89 @@ import profileImage from '../assets/profile-image.jpg';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-background pt-16 px-4 md:px-0 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-1/2 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
-              Hi, I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Roshan Kumar</span>
-            </h1>
-            <h2 className="text-lg md:text-2xl text-muted-foreground mb-6 font-medium">
-              Computer Science Student & Student Consultant
-            </h2>
-            <p className="text-base md:text-lg mb-8 text-muted-foreground max-w-lg leading-relaxed">
-              Computer Science student at Hochschule München passionate about making education more accessible. 
-              I help students navigate German university admissions and build solutions for better learning experiences.
+    <section id="home" className="min-h-screen flex items-center bg-background pt-20 px-4 md:px-8 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background"></div>
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 animate-fade-in">
+            <div className="space-y-2">
+              <p className="text-sm font-semibold tracking-wider text-primary uppercase">
+                Portfolio
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                Roshan Kumar
+              </h1>
+              <h2 className="text-xl md:text-2xl text-muted-foreground font-light">
+                Computer Science Student & Student Consultant
+              </h2>
+            </div>
+            
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Computer Science student at Hochschule München specializing in Engineering Physics and Data Science. 
+              Dedicated to making education more accessible through strategic consultation and innovative solutions.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-3 pt-4">
               <a 
                 href="https://www.linkedin.com/in/roshaankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn-outline flex items-center space-x-2"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-sm"
               >
                 <Linkedin size={18} />
-                <span>LinkedIn</span>
+                <span>Connect on LinkedIn</span>
               </a>
               <a 
                 href="#contact" 
-                className="btn-primary flex items-center space-x-2"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-border bg-background text-foreground rounded-lg font-medium hover:border-primary hover:text-primary transition-colors"
               >
                 <Mail size={18} />
-                <span>Contact Me</span>
+                <span>Get in Touch</span>
               </a>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-4 pt-6 border-t border-border">
               <a 
                 href="https://github.com/rooshankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                 aria-label="GitHub Profile"
               >
-                <Github size={24} />
+                <Github size={20} />
               </a>
               <a 
                 href="https://www.linkedin.com/in/roshaankumar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin size={24} />
+                <Linkedin size={20} />
               </a>
               <a 
                 href="mailto:isthisroshan@gmail.com" 
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors"
                 aria-label="Email"
               >
-                <Mail size={24} />
+                <Mail size={20} />
               </a>
             </div>
           </div>
 
-          <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="flex justify-center md:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl relative">
+              <div className="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-border shadow-lg bg-card">
                 <img 
                   src="/lovable-uploads/1291fc2d-0fcb-4737-877c-ff2e123ecc45.png" 
                   alt="Roshan Kumar - Computer Science Student & Student Consultant" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 rounded-full ring-4 ring-primary/10"></div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full flex items-center justify-center text-white font-bold" style={{background: 'var(--gradient-primary)'}}>
+              <div className="absolute -bottom-6 -right-6 px-6 py-4 bg-primary text-primary-foreground rounded-xl shadow-lg">
                 <div className="text-center">
-                  <div className="text-xs">CS Student</div>
+                  <div className="text-sm font-semibold">CS Student</div>
+                  <div className="text-xs opacity-90">Hochschule München</div>
                 </div>
               </div>
             </div>
